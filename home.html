@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<title>Sistem Informasi Pendidikan SMKN 2 Pati</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<link rel="stylesheet" href="w3schools/w3css/4/w3.css">
+<link rel="stylesheet" href="ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<link rel="icon" href="image/favicon.png" type="image/png" sizes="16x16">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>
+html,body,h1 {font-family: "Cooper Black" , serif;}
+html,body,h2,h3,h4,h5,h6{font-family: 'Indie Flower', cursive, serif;}
+iframe {width: 100%;height: 600px;border: 2px w3-grey;}
+</style>
+</head>
+<body onload="show('#home')">
+<div class="w3-top w3-dark-gray" style="padding-left:80px">
+<h2>Sistem Informasi Pendidikan SMKN 2 Pati</h2>
+</div>
+</audio>
+</div>
+<div id='sidebar' style="padding-top:65px">
+<div class="w3-sidebar w3-bar-block w3-blue w3-xxlarge" style="width:80px">
+  <a href="home.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#home')"><h5>Beran da</h5></a--> 
+  <a href="login.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#login')"><h5>Login</h5></a--> 
+  <a href="presensi.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#presensi')"><h5>Presen si</h5></a--> 
+  <a href="hadir.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#hadir')"><h5>Kehadir an</h5></a>
+  <a href="nilai.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#nilai')"><h5>Nilai</h5></a>
+</div>
+</div>
+<div id='loginDiv'>
+<div id="loginModal" class="w3-animate-zoom w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-green"> 
+        <span onclick="document.getElementById('loginModal').style.display='none'"
+        class="w3-button w3-xlarge w3-display-topright">&times;</span>
+        <h3>Status Presensi</h3>
+      </header>
+	  <div class="w3-panel" id="login_panel">
+  <p class="w3-center" id="loginOffline_"></p>
+  <p class="w3-center" id="loginOnline_"></p>
+   <p class="w3-center" id="loginOnlineStatus"></p> 
+</div>
+	</div>
+</div>	
+<div id="loginModalLogout" class="w3-animate-zoom w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-red"> 
+        <span onclick="document.getElementById('loginModalLogout').style.display='none'"
+        class="w3-button w3-xlarge w3-display-topright">&times;</span>
+        <h3>Status Presensi</h3>
+      </header>
+	  <div class="w3-panel" id="login_panel">
+      <p>Anda telah log out!</p>
+</div>
+	</div>
+</div>	
+<div id='home' class="w3-container w3-animate-left" style="padding-left:85px">
+  <h2 class="w3-animate-left">Home</h2>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+}
+button:hover {
+  opacity: 0.8;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<div class="w3-panel w3-yellow" id="login_panel"style="background-color:#f1f1f1">
+  <p class="w3-center" id="loginOffline"></p>
+  <p class="w3-center" id="namaOffline"></p>
+  <p class="w3-center" id="jurusanOffline"></p>
+  <p class="w3-center" id="kelasOffline"></p>  
+  <script>
+   var username=localStorage.getItem('usernameStored');
+   var nama=localStorage.getItem('nama');
+   var jurusan=localStorage.getItem('jurusan'); 
+   var kelas=localStorage.getItem('kelas');   
+   var tulisNIS='NIS: '+username;
+   var tulisNama='Nama: '+nama;
+   var tulisJurusan='Kompetensi Keahlian: '+jurusan; 
+   var tulisKelas='Kelas: '+kelas;   
+   document.getElementById('loginOffline').innerHTML=tulisNIS;
+   document.getElementById('namaOffline').innerHTML=tulisNama;
+   document.getElementById('jurusanOffline').innerHTML=tulisJurusan;   
+   document.getElementById('kelasOffline').innerHTML=tulisKelas;
+  </script>
+  <p class="w3-center" id='loginOnline'></p>
+   <p class="w3-center" id='loginOnlineStatus'></p> 
+</div>
+</div>
+</div>
+
+<div id='scriptDiv'>
+<script src="js/function2.js"></script>
+<script> 
+hideAll();
+var loginModal = document.getElementById('loginModal');window.onclick = function(event) {if (event.target == loginModal) { modal.style.display = "none";}}
+var loginModalLogout = document.getElementById('loginModalLogout');window.onclick = function(event) {if (event.target == loginModalLogout) {modal.style.display = "none";}}
+</script>
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+</div>
+</body>
+</html>

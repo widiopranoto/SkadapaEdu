@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<title>Sistem Informasi Pendidikan SMKN 2 Pati</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<link rel="stylesheet" href="w3schools/w3css/4/w3.css">
+<link rel="stylesheet" href="ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<link rel="icon" href="image/favicon.png" type="image/png" sizes="16x16">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>
+html,body,h1 {font-family: "Cooper Black" , serif;}
+html,body,h2,h3,h4,h5,h6{font-family: 'Indie Flower', cursive, serif;}
+iframe {width: 100%;height: 600px;border: 2px w3-grey;}
+</style>
+</head>
+<body onload="show('#home')">
+<div class="w3-top w3-dark-gray" style="padding-left:80px">
+<h2>Sistem Informasi Pendidikan SMKN 2 Pati</h2>
+</div>
+</audio>
+</div>
+<div id='sidebar' style="padding-top:65px">
+<div class="w3-sidebar w3-bar-block w3-blue w3-xxlarge" style="width:80px">
+  <a href="home.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#home')"><h5>Beran da</h5></a--> 
+  <a href="login.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#login')"><h5>Login</h5></a--> 
+  <a href="presensi.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#presensi')"><h5>Presen si</h5></a--> 
+  <a href="hadir.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#hadir')"><h5>Kehadir an</h5></a>
+  <a href="nilai.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#nilai')"><h5>Nilai</h5></a>
+</div>
+</div>
+<div id='presensiDiv'>
+<div id="presensiModal" class="w3-animate-zoom w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-yellow"> 
+        <span onclick="document.getElementById('presensiModal').style.display='none'"
+        class="w3-button w3-xlarge w3-display-topright">&times;</span>
+        <h3>Status Presensi</h3>
+      </header>
+	  <div class="w3-panel" id="presensi_panel">
+        <p class="w3-center" id="statusPresensi"></p>
+      </div>
+	</div>
+</div>	
+<div id='presensi' class="w3-container w3-animate-left" style="padding-left:85px">
+  <h2 class="w3-animate-left">Presensi</h2>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+}
+button:hover {
+  opacity: 0.8;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<div class="w3-panel w3-yellow" id="login_panel"style="background-color:#f1f1f1">
+  <p class="w3-center" id="loginOffline"></p>
+  <p class="w3-center" id="namaOffline"></p>
+  <p class="w3-center" id="jurusanOffline"></p>
+  <p class="w3-center" id="kelasOffline"></p> 
+  <p class="w3-center" id="tanggal"></p>
+  <p class="w3-center" id="jam"></p>  
+  <script>
+   var username=localStorage.getItem('usernameStored');
+   var nama=localStorage.getItem('nama');
+   var jurusan=localStorage.getItem('jurusan'); 
+   var kelas=localStorage.getItem('kelas');   
+   var tulisNIS='NIS: '+username;
+   var tulisNama='Nama: '+nama;
+   var tulisJurusan='Kompetensi Keahlian: '+jurusan; 
+   var tulisKelas='Kelas: '+kelas;   
+   document.getElementById('loginOffline').innerHTML=tulisNIS;
+   document.getElementById('namaOffline').innerHTML=tulisNama;
+   document.getElementById('jurusanOffline').innerHTML=tulisJurusan;   
+   document.getElementById('kelasOffline').innerHTML=tulisKelas;
+  </script>
+  <p class="w3-center" id='loginOnline'></p>
+   <p class="w3-center" id='loginOnlineStatus'></p> 
+</div>
+  <div class="w3-center">  
+    <div class="w3-bar">
+      <button class="w3-bar-item w3-btn w3-green" type="submit" onclick="postPresensi();modalkan('presensiModal');">Presensi Sekarang<i class="w3-margin-left fa fa-sign-in"></i></button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id='scriptDiv'>
+<script src="js/function2.js"></script>
+<script>
+var year=new Date();
+var tahun=year.getFullYear();
+var month=new Date();
+var bulan=month.getMonth()+1;
+var date=new Date();
+var tanggal=date.getDate();
+var hour=new Date();
+var jam=hour.getHours();
+var minute=new Date();
+var menit=minute.getMinutes();
+localStorage.setItem('tahun',tahun);
+localStorage.setItem('bulan',bulan);
+localStorage.setItem('tanggal',tanggal);
+localStorage.setItem('jam',jam);
+localStorage.setItem('menit',menit);
+if(jam<=7){var statusPresensi="H";localStorage.setItem('statusPresensi',statusPresensi);}
+if(jam>7){var statusPresensi="T";localStorage.setItem('statusPresensi',statusPresensi);}
+var tulisTanggal='Tanggal Presensi: '+tanggal+"/"+bulan+"/"+tahun; 
+var tulisJam='Jam Presensi: '+jam+":"+menit;   
+document.getElementById('tanggal').innerHTML=tulisTanggal;
+document.getElementById('jam').innerHTML=tulisJam;
+
+var inputNamaSheet="Presensi_"+bulan+"_"+tahun;
+var username=localStorage.getItem('usernameStored');
+var item="H";
+if(tanggal==1){var noKolom=8;}
+if(tanggal==2){var noKolom=9;}
+if(tanggal==3){var noKolom=10;}
+if(tanggal==4){var noKolom=11;}
+if(tanggal==5){var noKolom=12;}
+if(tanggal==6){var noKolom=13;}
+if(tanggal==7){var noKolom=14;}
+if(tanggal==8){var noKolom=15;}
+if(tanggal==9){var noKolom=16;}
+if(tanggal==10){var noKolom=17;}
+if(tanggal==11){var noKolom=18;}
+if(tanggal==12){var noKolom=19;}
+if(tanggal==13){var noKolom=20;}
+if(tanggal==14){var noKolom=21;}
+if(tanggal==15){var noKolom=22;}
+if(tanggal==16){var noKolom=23;}
+if(tanggal==17){var noKolom=24;}
+if(tanggal==18){var noKolom=25;}
+if(tanggal==19){var noKolom=26;}
+if(tanggal==20){var noKolom=27;}
+if(tanggal==21){var noKolom=28;}
+if(tanggal==22){var noKolom=29;}
+if(tanggal==23){var noKolom=30;}
+if(tanggal==24){var noKolom=31;}
+if(tanggal==25){var noKolom=32;}
+if(tanggal==26){var noKolom=33;}
+if(tanggal==27){var noKolom=34;}
+if(tanggal==28){var noKolom=35;}
+if(tanggal==29){var noKolom=36;}
+if(tanggal==30){var noKolom=37;}
+if(tanggal==31){var noKolom=38;}
+
+function postPresensi(){
+  postItem(inputUrlSpreadSheet,inputNamaSheet,username,item,noKolom);
+}
+var tulisStatusPresensi='Anda telah melakukan presensi pada tanggal '+tanggal+"/"+bulan+"/"+tahun+" jam "+jam+":"+menit;
+var statusPresensi=document.getElementById('statusPresensi').innerHTML=tulisStatusPresensi;
+hideAll();
+var loginModal = document.getElementById('loginModal');window.onclick = function(event) {if (event.target == loginModal) { modal.style.display = "none";}}
+var loginModalLogout = document.getElementById('loginModalLogout');window.onclick = function(event) {if (event.target == loginModalLogout) {modal.style.display = "none";}}
+function modalkan(id){
+	document.getElementById(id).style.display='block';	
+}
+</script>
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+</div>
+</body>
+</html>

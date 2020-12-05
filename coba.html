@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Use the XMLHttpRequest to get the content of a file.</h2>
+<p>The content is written in JSON format, and can easily be converted into a JavaScript object.</p>
+
+<p id="loginOnlineStatus"></p>
+
+<script src="js/function2.js"></script>
+
+<script>
+  var usernameStored=localStorage.getItem('usernameStored');
+  var passwordStored=localStorage.getItem('passwordStored');
+  var inputUrlSpreadSheet='https://docs.google.com/spreadsheets/d/1YqP2Y8-2WgBDTdt7zeUJBPogTcd9yL3u6UC4gN_kX9Q/edit?usp=sharing';
+  var inputNamaSheet='login';
+  var action='getNilai';
+  var nis='14452';
+  var noKolom='5';
+  var varStored='coba';
+  getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,action,nis,noKolom,varStored);
+  showStorage('coba','loginOnlineStatus');
+</script>
+</body>
+</html>

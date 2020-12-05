@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<title>Sistem Informasi Pendidikan SMKN 2 Pati</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<link rel="stylesheet" href="w3schools/w3css/4/w3.css">
+<link rel="stylesheet" href="ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<link rel="icon" href="image/favicon.png" type="image/png" sizes="16x16">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>
+html,body,h1 {font-family: "Cooper Black" , serif;}
+html,body,h2,h3,h4,h5,h6{font-family: 'Indie Flower', cursive, serif;}
+iframe {width: 100%;height: 600px;border: 2px w3-grey;}
+</style>
+</head>
+<body onload="show('#nilai')">
+<div class="w3-top w3-dark-gray" style="padding-left:80px">
+<h2>Sistem Informasi Pendidikan SMKN 2 Pati</h2>
+</div>
+
+<div id='sidebar' style="padding-top:65px">
+<div class="w3-sidebar w3-bar-block w3-blue w3-xxlarge" style="width:80px">
+  <a href="home.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#home')"><h5>Beran da</h5></a--> 
+  <a href="login.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#login')"><h5>Login</h5></a--> 
+  <a href="presensi.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#presensi')"><h5>Presen si</h5></a--> 
+  <a href="hadir.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#hadir');"><h5>Kehadir an</h5></a>
+  <a href="nilai.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#nilai')"><h5>Nilai</h5></a>
+</div>
+</div>
+
+<div id='nilai' class="w3-container w3-animate-left" style="padding-left:85px">
+  <h2 class="w3-animate-left">Daftar Nilai</h2>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+}
+button:hover {
+  opacity: 0.8;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<div class="w3-row-padding w3-theme">
+         <div class="w3-section">
+          <h2 class="w3-animate-left">Daftar Mapel X MM</h2>  
+            <table class="w3-table-all">
+			  <tr>
+			    <td>No.</td>
+			    <td>Mapel</td><td>PH 1</td><td>PH 2</td><td>PH 3</td><td>PH 4</td><td>PH 5</td><td>PH 6</td><td>PH 7</td>
+			    <td>PAS</td>
+              </tr>				
+			  <tr>
+			    <td>1</td>
+			    <td id='mapel_1'></td><td id='ph_1_1'></td><td id='ph_1_2'></td><td id='ph_1_3'></td><td id='ph_1_4'></td>
+				<td id='ph_1_5'></td><td id='ph_1_6'></td><td id='ph_1_7'></td>
+			    <td id='pas_1'></td>
+			  </tr>
+              <tr>			  
+			    <td>2</td>
+			    <td id='mapel_2'></td><td id='ph_2_1'></td><td id='ph_2_2'></td><td id='ph_2_3'></td><td id='ph_2_4'></td>
+				<td id='ph_2_5'></td><td id='ph_2_6'></td><td id='ph_2_7'></td>
+			    <td id='pas_2'></td>				
+              </tr>
+			  <tr>
+			    <td>3</td>
+			    <td id='mapel_3'></td><td id='ph_3_1'></td><td id='ph_3_2'></td><td id='ph_3_3'></td><td id='ph_3_4'></td>
+				<td id='ph_3_5'></td><td id='ph_3_6'></td><td id='ph_3_7'></td>
+			    <td id='pas_3'></td>
+			  <tr>
+			    <td>4</td>
+			    <td id='mapel_4'></td><td id='ph_4_1'></td><td id='ph_4_2'></td><td id='ph_4_3'></td><td id='ph_4_4'></td>
+				<td id='ph_4_5'></td><td id='ph_4_6'></td><td id='ph_4_7'></td>
+			    <td id='pas_4'></td>
+			  </tr>				
+			  <tr>
+			    <td>5</td>
+			    <td id='mapel_5'></td><td id='ph_5_1'></td><td id='ph_5_2'></td><td id='ph_5_3'></td><td id='ph_5_4'></td>
+				<td id='ph_5_5'></td><td id='ph_5_6'></td><td id='ph_5_7'></td>
+			    <td id='pas_5'></td>
+			  </tr>				
+			  <tr>
+			    <td>6</td>
+			    <td id='mapel_6'></td><td id='ph_6_1'></td><td id='ph_6_2'></td><td id='ph_6_3'></td><td id='ph_6_4'></td>
+				<td id='ph_6_5'></td><td id='ph_6_6'></td><td id='ph_6_7'></td>
+			    <td id='pas_6'></td>
+			  </tr>				
+			  <tr>
+			    <td>7</td>
+			    <td id='mapel_7'></td><td id='ph_7_1'></td><td id='ph_7_2'></td><td id='ph_7_3'></td><td id='ph_7_4'></td>
+				<td id='ph_7_5'></td><td id='ph_7_6'></td><td id='ph_7_7'></td>
+			    <td id='pas_7'></td>
+			  </tr>				
+			  <tr>
+			    <td>8</td>
+			    <td id='mapel_8'></td><td id='ph_8_1'></td><td id='ph_8_2'></td><td id='ph_8_3'></td><td id='ph_8_4'></td>
+				<td id='ph_8_5'></td><td id='ph_8_6'></td><td id='ph_8_7'></td>
+			    <td id='pas_8'></td>
+			  </tr>				
+			  <tr>
+			    <td>9</td>
+			    <td id='mapel_9'></td><td id='ph_9_1'></td><td id='ph_9_2'></td><td id='ph_9_3'></td><td id='ph_9_4'></td>
+				<td id='ph_9_5'></td><td id='ph_9_6'></td><td id='ph_9_7'></td>
+			    <td id='pas_9'></td>
+			  </tr>
+			  <tr>
+			    <td>10</td>
+			    <td id='mapel_10'></td><td id='ph_10_1'></td><td id='ph_10_2'></td><td id='ph_10_3'></td><td id='ph_10_4'></td>
+				<td id='ph_10_5'></td><td id='ph_10_6'></td><td id='ph_10_7'></td>
+			    <td id='pas_10'></td>
+			  </tr>
+			  <tr>
+			    <td>11</td>
+			    <td id='mapel_11'></td><td id='ph_11_1'></td><td id='ph_11_2'></td><td id='ph_11_3'></td><td id='ph_11_4'></td>
+				<td id='ph_11_5'></td><td id='ph_11_6'></td><td id='ph_11_7'></td>
+			    <td id='pas_11'></td>
+			  </tr>
+			  <tr>
+			    <td>12</td>
+			    <td id='mapel_12'></td><td id='ph_12_1'></td><td id='ph_12_2'></td><td id='ph_12_3'></td><td id='ph_12_4'></td>
+				<td id='ph_12_5'></td><td id='ph_12_6'></td><td id='ph_12_7'></td>
+			    <td id='pas_12'></td>
+			  </tr>
+			  <tr>
+			    <td>13</td>
+			    <td id='mapel_13'></td><td id='ph_13_1'></td><td id='ph_13_2'></td><td id='ph_13_3'></td><td id='ph_13_4'></td>
+				<td id='ph_13_5'></td><td id='ph_13_6'></td><td id='ph_13_7'></td>
+			    <td id='pas_13'></td>
+			  </tr>
+			  <tr>
+			    <td>14</td>
+			    <td id='mapel_14'></td><td id='ph_14_1'></td><td id='ph_14_2'></td><td id='ph_14_3'></td><td id='ph_14_4'></td>
+				<td id='ph_14_5'></td><td id='ph_14_6'></td><td id='ph_14_7'></td>
+			    <td id='pas_14'></td>
+			  </tr>
+			  <tr>
+			    <td>15</td>
+			    <td id='mapel_15'></td><td id='ph_15_1'></td><td id='ph_15_2'></td><td id='ph_15_3'></td><td id='ph_15_4'></td>
+				<td id='ph_15_5'></td><td id='ph_15_6'></td><td id='ph_15_7'></td>
+			    <td id='pas_15'></td>
+			  </tr>
+			  <tr>
+			    <td>16</td>
+			    <td id='mapel_16'></td><td id='ph_16_1'></td><td id='ph_16_2'></td><td id='ph_16_3'></td><td id='ph_16_4'></td>
+				<td id='ph_16_5'></td><td id='ph_16_6'></td><td id='ph_16_7'></td>
+			    <td id='pas_16'></td>
+			  </tr>			  
+			  <tr>
+			    <td>17</td>
+			    <td id='mapel_17'></td><td id='ph_17_1'></td><td id='ph_17_2'></td><td id='ph_17_3'></td><td id='ph_17_4'></td>
+				<td id='ph_17_5'></td><td id='ph_17_6'></td><td id='ph_17_7'></td>
+			    <td id='pas_17'></td>
+			  </tr>
+			  <tr>
+			    <td>18</td>
+			    <td id='mapel_18'></td><td id='ph_18_1'></td><td id='ph_18_2'></td><td id='ph_18_3'></td><td id='ph_18_4'></td>
+				<td id='ph_18_5'></td><td id='ph_18_6'></td><td id='ph_18_7'></td>
+			    <td id='pas_18'></td>
+			  </tr>				
+			  <tr>
+			    <td>19</td>
+			    <td id='mapel_19'></td><td id='ph_19_19'></td><td id='ph_19_2'></td><td id='ph_19_3'></td><td id='ph_19_4'></td>
+				<td id='ph_19_5'></td><td id='ph_19_6'></td><td id='ph_19_7'></td>
+			    <td id='pas_19'></td>
+			  </tr>				
+			  <tr>
+			    <td>20</td>
+			    <td id='mapel_20'></td><td id='ph_20_1'></td><td id='ph_20_2'></td><td id='ph_20_3'></td><td id='ph_20_4'></td>
+				<td id='ph_20_5'></td><td id='ph_20_6'></td><td id='ph_20_7'></td>
+			    <td id='pas_20'></td>
+			  </tr>
+			  <tr>
+			    <td>21</td>
+			    <td id='mapel_21'></td><td id='ph_21_1'></td><td id='ph_21_2'></td><td id='ph_21_3'></td><td id='ph_21_4'></td>
+				<td id='ph_21_5'></td><td id='ph_21_6'></td><td id='ph_21_7'></td>
+			    <td id='pas_21'></td>
+			  </tr>			  
+			</table>
+        </div>  
+</div>
+   </div>  
+</div>
+</div>
+
+<div id='scriptDiv'>
+<script src="js/function2.js"></script>
+<script> 
+function storeMapel(){
+var nis=localStorage.getItem('jurusan');
+var tingkat=localStorage.getItem('tingkat');
+var inputUrlSpreadSheet='https://docs.google.com/spreadsheets/d/1YqP2Y8-2WgBDTdt7zeUJBPogTcd9yL3u6UC4gN_kX9Q/edit?usp=sharing';
+var inputNamaSheet=tingkat+"_Mapel";
+var action='getItem2Kolom';
+var mapel_1=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,3,'mapel_1');
+var mapel_2=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,4,'mapel_2');
+var mapel_3=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,5,'mapel_3');
+var mapel_4=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,6,'mapel_4');
+var mapel_5=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,7,'mapel_5');
+var mapel_6=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,8,'mapel_6');
+var mapel_7=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,9,'mapel_7');
+var mapel_8=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,10,'mapel_8');
+var mapel_9=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,11,'mapel_9');
+var mapel_10=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,12,'mapel_10');
+var mapel_11=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,13,'mapel_11');
+var mapel_12=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,14,'mapel_12');
+var mapel_13=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,15,'mapel_13');
+var mapel_14=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,16,'mapel_14');
+var mapel_15=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,17,'mapel_15');
+var mapel_16=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,18,'mapel_16');
+var mapel_17=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,19,'mapel_17');
+var mapel_18=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,20,'mapel_18');
+var mapel_19=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,21,'mapel_19');
+var mapel_20=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,22,'mapel_20');
+var mapel_21=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,2,23,'mapel_21');
+}
+storeMapel();
+function tulisMapel(){
+showStorage('mapel_1','mapel_1');
+showStorage('mapel_2','mapel_2');
+showStorage('mapel_3','mapel_3');
+showStorage('mapel_4','mapel_4');
+showStorage('mapel_5','mapel_5');
+showStorage('mapel_6','mapel_6');
+showStorage('mapel_7','mapel_7');
+showStorage('mapel_8','mapel_8');
+showStorage('mapel_9','mapel_9');
+showStorage('mapel_10','mapel_10');
+showStorage('mapel_11','mapel_11');
+showStorage('mapel_12','mapel_12');
+showStorage('mapel_13','mapel_13');
+showStorage('mapel_14','mapel_14');
+showStorage('mapel_15','mapel_15');
+showStorage('mapel_16','mapel_16');
+showStorage('mapel_17','mapel_17');
+showStorage('mapel_18','mapel_18');
+showStorage('mapel_19','mapel_19');
+showStorage('mapel_20','mapel_20');
+showStorage('mapel_21','mapel_21');
+}
+tulisMapel();
+function storePAS(){
+var nis=localStorage.getItem('usernameStored');
+var inputUrlSpreadSheet='https://docs.google.com/spreadsheets/d/1YqP2Y8-2WgBDTdt7zeUJBPogTcd9yL3u6UC4gN_kX9Q/edit?usp=sharing';
+var semester=localStorage.getItem('semester');
+var year=new Date();
+var tahun=year.getFullYear();
+var inputNamaSheet="PAS_"+semester+"_"+tahun;
+var action='getItem2Kolom';
+var pas_1=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,8,'pas_1');
+var pas_2=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,9,'pas_2');
+var pas_3=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,10,'pas_3');
+var pas_4=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,11,'pas_4');
+var pas_5=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,12,'pas_5');
+var pas_6=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,13,'pas_6');
+var pas_7=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,14,'pas_7');
+var pas_8=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,15,'pas_8');
+var pas_9=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,16,'pas_9');
+var pas_10=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,17,'pas_10');
+var pas_11=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,18,'pas_11');
+var pas_12=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,19,'pas_12');
+var pas_13=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,20,'pas_13');
+var pas_14=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,21,'pas_14');
+var pas_15=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,22,'pas_15');
+var pas_16=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,23,'pas_16');
+var pas_17=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,24,'pas_17');
+var pas_18=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,25,'pas_18');
+var pas_19=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,26,'pas_19');
+var pas_20=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,27,'pas_20');
+var pas_21=getAndStoreItem2Kolom(inputUrlSpreadSheet,inputNamaSheet,action,nis,1,28,'pas_21');
+}
+storePAS();
+function tulisPAS(){
+showStorage('pas_1','pas_1');
+showStorage('pas_2','pas_2');
+showStorage('pas_3','pas_3');
+showStorage('pas_4','pas_4');
+showStorage('pas_5','pas_5');
+showStorage('pas_6','pas_6');
+showStorage('pas_7','pas_7');
+showStorage('pas_8','pas_8');
+showStorage('pas_9','pas_9');
+showStorage('pas_10','pas_10');
+showStorage('pas_11','pas_11');
+showStorage('pas_12','pas_12');
+showStorage('pas_13','pas_13');
+showStorage('pas_14','pas_14');
+showStorage('pas_15','pas_15');
+showStorage('pas_16','pas_16');
+showStorage('pas_17','pas_17');
+showStorage('pas_18','pas_18');
+showStorage('pas_19','pas_19');
+showStorage('pas_20','pas_20');
+showStorage('pas_21','pas_21');
+}
+tulisPAS();
+hideAll();
+var loginModal = document.getElementById('loginModal');window.onclick = function(event) {if (event.target == loginModal) { modal.style.display = "none";}}
+var loginModalLogout = document.getElementById('loginModalLogout');window.onclick = function(event) {if (event.target == loginModalLogout) {modal.style.display = "none";}}
+</script>
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+</div>
+</body>
+</html>

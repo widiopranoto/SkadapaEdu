@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<title>Sistem Informasi Pendidikan SMKN 2 Pati</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<link rel="stylesheet" href="w3schools/w3css/4/w3.css">
+<link rel="stylesheet" href="ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<link rel="icon" href="image/favicon.png" type="image/png" sizes="16x16">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>
+html,body,h1 {font-family: "Cooper Black" , serif;}
+html,body,h2,h3,h4,h5,h6{font-family: 'Indie Flower', cursive, serif;}
+iframe {width: 100%;height: 600px;border: 2px w3-grey;}
+</style>
+</head>
+<body onload="show('#nilai')">
+<div class="w3-top w3-dark-gray" style="padding-left:80px">
+<h2>Sistem Informasi Pendidikan SMKN 2 Pati</h2>
+</div>
+
+<div id='sidebar' style="padding-top:65px">
+<div class="w3-sidebar w3-bar-block w3-blue w3-xxlarge" style="width:80px">
+  <a href="home.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#home')"><h5>Beran da</h5></a--> 
+  <a href="login.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#login')"><h5>Login</h5></a--> 
+  <a href="presensi.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#presensi')"><h5>Presen si</h5></a--> 
+  <a href="hadir.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#hadir');"><h5>Kehadir an</h5></a>
+  <a href="nilai.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#nilai')"><h5>Nilai</h5></a>
+</div>
+</div>
+
+<div id='nilai' class="w3-container w3-animate-left" style="padding-left:85px">
+  <h2 class="w3-animate-left">Daftar Nilai</h2>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+}
+button:hover {
+  opacity: 0.8;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<div class="w3-row-padding w3-theme">
+         <div class="w3-section">
+          <h2 class="w3-animate-left">Daftar Mapel</h2>  
+            <table class="w3-table-all">
+			  <tr>
+                    <td><a href='nilai_x_dpib.html' class="w3-button w3-green" id="" title="" onclick="">X DPIB<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xi_dpib.html' class="w3-button w3-green" id="" title="" onclick="">XI DPIB<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xii_dpib.html' class="w3-button w3-green" id="" title="" onclick="">XII DPIB<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td></td>
+              </tr>  
+			  <tr>
+                    <td><a href='nilai_x_tav.html' class="w3-button w3-green" id="" title="" onclick="">X TAV<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xi_tav.html' class="w3-button w3-green" id="" title="" onclick="">XI TAV<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xii_tav.html' class="w3-button w3-green" id="" title="" onclick="">XII TAV<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td></td>
+              </tr> 
+			  <tr>
+                    <td><a href='nilai_x_toi.html' class="w3-button w3-green" id="" title="" onclick="">X TOI<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xi_toi.html' class="w3-button w3-green" id="" title="" onclick="">XI TOI<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xii_toi.html' class="w3-button w3-green" id="" title="" onclick="">XII TOI<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xii_toi.html' class="w3-button w3-green" id="" title="" onclick="">XIII TOI<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+              </tr> 
+			  <tr>
+                    <td><a href='nilai_x_tp.html' class="w3-button w3-green" id="" title="" onclick="">X TP<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xi_tp.html' class="w3-button w3-green" id="" title="" onclick="">XI TP<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xii_tp.html' class="w3-button w3-green" id="" title="" onclick="">XII TP<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td></td>
+              </tr>
+			  <tr>
+                    <td><a href='nilai_x_tkr.html' class="w3-button w3-green" id="" title="" onclick="">X TKR<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xi_tkr.html' class="w3-button w3-green" id="" title="" onclick="">XI TKR<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xii_tkr.html' class="w3-button w3-green" id="" title="" onclick="">XII TKR<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td></td>
+              </tr>
+			  <tr>
+                    <td><a href='nilai_x_mm.html' class="w3-button w3-green" id="" title="" onclick="">X MM<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xi_mm.html' class="w3-button w3-green" id="" title="" onclick="">XI MM<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                    <td><a href='nilai_xii_mm.html' class="w3-button w3-green" id="" title="" onclick="">XII MM<i class="w3-margin-left fa fa-angle-double-right"></i></a></td>
+                     <td></td>
+              </tr>    			  
+			</table>
+        </div>  
+</div>
+   </div>  
+</div>
+</div>
+
+<div id='scriptDiv'>
+<script src="js/function2.js"></script>
+<script> 
+hideAll();
+var loginModal = document.getElementById('loginModal');window.onclick = function(event) {if (event.target == loginModal) { modal.style.display = "none";}}
+var loginModalLogout = document.getElementById('loginModalLogout');window.onclick = function(event) {if (event.target == loginModalLogout) {modal.style.display = "none";}}
+</script>
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+</div>
+</body>
+</html>

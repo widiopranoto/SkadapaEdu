@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<title>Sistem Informasi Pendidikan SMKN 2 Pati</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<link rel="stylesheet" href="w3schools/w3css/4/w3.css">
+<link rel="stylesheet" href="ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<link rel="icon" href="image/favicon.png" type="image/png" sizes="16x16">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>
+html,body,h1 {font-family: "Cooper Black" , serif;}
+html,body,h2,h3,h4,h5,h6{font-family: 'Indie Flower', cursive, serif;}
+iframe {width: 100%;height: 600px;border: 2px w3-grey;}
+</style>
+</head>
+<body onload="show('#hadir')">
+<div class="w3-top w3-dark-gray" style="padding-left:80px">
+<h2>Sistem Informasi Pendidikan SMKN 2 Pati</h2>
+</div>
+
+<div id='sidebar' style="padding-top:65px">
+<div class="w3-sidebar w3-bar-block w3-blue w3-xxlarge" style="width:80px">
+  <a href="home.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#home')"><h5>Beran da</h5></a--> 
+  <a href="login.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#login')"><h5>Login</h5></a--> 
+  <a href="presensi.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#presensi')"><h5>Presen si</h5></a--> 
+  <a href="hadir.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#hadir');setTahunBulan();tulisKet();"><h5>Kehadir an</h5></a>
+  <a href="nilai.html" class="w3-bar-item w3-button w3-hover-aqua" onclick="show('#nilai')"><h5>Nilai</h5></a>
+</div>
+</div>
+
+<div id='hadir' class="w3-container w3-animate-left" style="padding-left:85px">
+  <h2 class="w3-animate-left">Rekap Kehadiran</h2>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+}
+button:hover {
+  opacity: 0.8;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<div class="w3-row-padding w3-theme">
+        <div class="w3-section">
+            <div class="w3-card-2">
+    <table class="w3-table-all">
+    <tr>
+      <th>Tanggal</th>
+      <th>Bulan</th>
+      <th>Tahun</th>	  
+      <th>Keterangan</th>
+    </tr>
+    <tr><td id='tanggal_1'>1</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_1'></td></tr>
+	<tr><td id='tanggal_2'>2</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_2'></td></tr>
+    <tr><td id='tanggal_3'>3</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_3'></td></tr>
+    <tr><td id='tanggal_4'>4</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_4'></td></tr>
+    <tr><td id='tanggal_5'>5</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_5'></td></tr>	
+	<tr><td id='tanggal_6'>6</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_6'></td></tr>
+    <tr><td id='tanggal_7'>7</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_7'></td></tr>
+	<tr><td id='tanggal_8'>8</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_8'></td></tr>
+	<tr><td id='tanggal_9'>9</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_9'></td></tr>
+	<tr><td id='tanggal_10'>10</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_10'></td></tr>
+    <tr><td id='tanggal_11'>11</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_11'></td></tr>
+	<tr><td id='tanggal_12'>12</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_12'></td></tr>
+    <tr><td id='tanggal_13'>13</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_13'></td></tr>
+    <tr><td id='tanggal_14'>14</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_14'></td></tr>
+    <tr><td id='tanggal_15'>15</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_15'></td></tr>	
+	<tr><td id='tanggal_16'>16</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_16'></td></tr>
+    <tr><td id='tanggal_17'>17</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_17'></td></tr>
+	<tr><td id='tanggal_18'>18</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_18'></td></tr>
+	<tr><td id='tanggal_19'>19</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_19'></td></tr>
+	<tr><td id='tanggal_20'>20</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_20'></td></tr>
+	<tr><td id='tanggal_21'>21</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_21'></td></tr>
+	<tr><td id='tanggal_22'>22</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_22'></td></tr>
+    <tr><td id='tanggal_23'>23</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_23'></td></tr>
+    <tr><td id='tanggal_24'>24</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_24'></td></tr>
+    <tr><td id='tanggal_25'>25</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_25'></td></tr>	
+	<tr><td id='tanggal_26'>26</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_26'></td></tr>
+    <tr><td id='tanggal_27'>27</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_27'></td></tr>
+	<tr><td id='tanggal_28'>28</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_28'></td></tr>
+	<tr><td id='tanggal_29'>29</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_29'></td></tr>
+	<tr><td id='tanggal_30'>30</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_30'></td></tr>
+	<tr><td id='tanggal_31'>31</td><td id='bulan'></td><td id='tahun'></td><td id='keterangan_32'></td></tr>
+
+            </div>
+        </div>
+</div>
+</div>
+
+<div id='scriptDiv'>
+<script src="js/function2.js"></script>
+<script> 
+hideAll();
+function setTahunBulan(){
+ var year=new Date();
+ var tahun=year.getFullYear();
+ localStorage.setItem('tahunStored',tahun);
+ var month=new Date();
+ var bulan=month.getMonth()+1;
+ localStorage.setItem('bulanStored',bulan);
+}
+function tulisBulan(){
+  var bulan=localStorage.getItem('bulanStored');
+  document.getElementById('bulan').innerHTML=bulan;  
+}
+tulisBulan();
+function tulisTahun(){
+  var tahun=localStorage.getItem('tahunStored');
+  document.getElementById('tahun').innerHTML=tahun;  
+}
+tulisTahun();
+function storeKet(kelas){
+var kelas;
+var inputUrlSpreadSheet='https://docs.google.com/spreadsheets/d/1YqP2Y8-2WgBDTdt7zeUJBPogTcd9yL3u6UC4gN_kX9Q/edit?usp=sharing';
+var year=new Date();
+var tahun=year.getFullYear();
+var month=new Date();
+var bulan=month.getMonth()+1;
+var inputNamaSheet="Presensi"+"_"+bulan+"_"+tahun;
+var nis=localStorage.getItem('usernameStored');
+var keterangan_1=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,8,'keterangan_1');
+var keterangan_2=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,9,'keterangan_2');
+var keterangan_3=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,10,'keterangan_3');
+var keterangan_4=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,11,'keterangan_4');
+var keterangan_5=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,12,'keterangan_5');
+var keterangan_6=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,13,'keterangan_6');
+var keterangan_7=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,14,'keterangan_7');
+var keterangan_8=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,15,'keterangan_8');
+var keterangan_9=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,16,'keterangan_9');
+var keterangan_10=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,17,'keterangan_10');
+var keterangan_11=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,18,'keterangan_11');
+var keterangan_12=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,19,'keterangan_12');
+var keterangan_13=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,20,'keterangan_13');
+var keterangan_14=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,21,'keterangan_14');
+var keterangan_15=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,22,'keterangan_15');
+var keterangan_16=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,23,'keterangan_16');
+var keterangan_17=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,24,'keterangan_17');
+var keterangan_18=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,25,'keterangan_18');
+var keterangan_19=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,26,'keterangan_19');
+var keterangan_20=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,27,'keterangan_20');
+var keterangan_21=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,28,'keterangan_21');
+var keterangan_22=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,29,'keterangan_22');
+var keterangan_23=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,30,'keterangan_23');
+var keterangan_24=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,31,'keterangan_24');
+var keterangan_25=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,32,'keterangan_25');
+var keterangan_26=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,33,'keterangan_26');
+var keterangan_27=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,34,'keterangan_27');
+var keterangan_28=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,35,'keterangan_28');
+var keterangan_29=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,36,'keterangan_29');
+var keterangan_30=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,37,'keterangan_30');
+var keterangan_31=getAndStoreNilai(inputUrlSpreadSheet,inputNamaSheet,'getNilai',nis,38,'keterangan_31');
+}
+function tulisKet(){
+var tingkat=localStorage.getItem('tingkat');
+storeKet(tingkat);
+showStorage('keterangan_1','keterangan_1');
+showStorage('keterangan_2','keterangan_2');
+showStorage('keterangan_3','keterangan_3');
+showStorage('keterangan_4','keterangan_4');
+showStorage('keterangan_5','keterangan_5');
+showStorage('keterangan_6','keterangan_6');
+showStorage('keterangan_7','keterangan_7');
+showStorage('keterangan_8','keterangan_8');
+showStorage('keterangan_9','keterangan_9');
+showStorage('keterangan_10','keterangan_10');
+showStorage('keterangan_11','keterangan_11');
+showStorage('keterangan_12','keterangan_12');
+showStorage('keterangan_13','keterangan_13');
+showStorage('keterangan_14','keterangan_14');
+showStorage('keterangan_15','keterangan_15');
+showStorage('keterangan_16','keterangan_16');
+showStorage('keterangan_17','keterangan_17');
+showStorage('keterangan_18','keterangan_18');
+showStorage('keterangan_19','keterangan_19');
+showStorage('keterangan_20','keterangan_20');
+showStorage('keterangan_21','keterangan_21');
+showStorage('keterangan_22','keterangan_22');
+showStorage('keterangan_23','keterangan_23');
+showStorage('keterangan_24','keterangan_24');
+showStorage('keterangan_25','keterangan_25');
+showStorage('keterangan_26','keterangan_26');
+showStorage('keterangan_27','keterangan_27');
+showStorage('keterangan_28','keterangan_28');
+showStorage('keterangan_29','keterangan_29');
+showStorage('keterangan_30','keterangan_30');
+showStorage('keterangan_31','keterangan_31');
+}
+tulisKet();
+var loginModal = document.getElementById('loginModal');window.onclick = function(event) {if (event.target == loginModal) { modal.style.display = "none";}}
+var loginModalLogout = document.getElementById('loginModalLogout');window.onclick = function(event) {if (event.target == loginModalLogout) {modal.style.display = "none";}}
+</script>
+<script src="w3schools/lib/w3.js"></script>
+<script src="js/function2.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+</div>
+</body>
+</html>
